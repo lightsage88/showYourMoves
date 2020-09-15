@@ -1,0 +1,14 @@
+
+  <div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+    <h1>shit</h1>
+    <div col *ngFor="let fighter of fighters">
+     
+      <app-card [fighter]="fighter">
+
+      </app-card>
+    </div>
