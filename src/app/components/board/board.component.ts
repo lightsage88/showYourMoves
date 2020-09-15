@@ -40,9 +40,10 @@ export class BoardComponent implements OnInit {
     })
     .valueChanges.subscribe(result => {
       console.log('these are the results ', result)
-      this.fighters = result.data.roster
-      this.loading = result.loading
-      this.error = result.error
+      this.result = result
+      this.fighters = this.result.data.roster
+      this.loading = this.result.loading
+      this.error = this.result.error
     })
   }
 

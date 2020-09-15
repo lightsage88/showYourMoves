@@ -1,1 +1,8 @@
-<p>collapse works!</p>
+<!-- {{item}} -->
+<nz-collapse>
+  <nz-collapse-panel *ngFor="let panel of fighterObjectArray; index as i" [nzHeader]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+    <p style="margin:0;">
+      {{panel.info}}
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>

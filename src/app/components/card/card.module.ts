@@ -11,7 +11,7 @@ import { CollapseComponent } from '../collapse/collapse.component'
   declarations: [CardComponent, CollapseComponent],
   imports: [
     CommonModule,
-    // NzCardModule,
+    NzCardModule,
     NzCollapseModule
   ],
   // exports: [CardComponent]

@@ -9,10 +9,11 @@ import { NgModule } from '@angular/core'
 })
 export class CardComponent implements OnInit {
   @Input() fighter:any
-  @Output() fighterX:any
+  description:string
   constructor() { }
 
   ngOnInit(): void {
+    this.description = this.fighter.description
   }
 
 }
