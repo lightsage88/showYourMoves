@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { NgModule } from '@angular/core'
 
 
 @Component({
@@ -10,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() fighter:any
-  
+  @Output() fighterX:any
   constructor() { }
 
   ngOnInit(): void {

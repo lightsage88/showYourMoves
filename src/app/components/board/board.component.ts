@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular'
 import gql from 'graphql-tag'
 
-
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -10,6 +9,7 @@ import gql from 'graphql-tag'
 })
 export class BoardComponent implements OnInit {
   fighters:any[]
+  result:any
   loading:Boolean = true
   error:any
   constructor(
