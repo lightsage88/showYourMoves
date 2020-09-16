@@ -1,6 +1,7 @@
 <router-outlet>
   <app-header [roster]="fighters" (characterListTyping)="theNextPart($event)"></app-header>
   <app-board 
+    [searchString]="searchString"
     [fighters]="fighters" 
     [loading]="loading">
   </app-board>

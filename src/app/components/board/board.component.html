@@ -11,6 +11,6 @@
       <div class="inner-box">col-6</div>
     </div>
   </div>
-    <div col *ngFor="let fighter of fighters">
+    <div col *ngFor="let fighter of fightersPresented || fighters">
       <app-card [fighter]="fighter"></app-card>
     </div>

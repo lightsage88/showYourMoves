@@ -25,11 +25,11 @@ export class HeaderComponent implements OnInit {
   onInput(e: Event): void {
     const value = (e.target as HTMLInputElement).value;
     console.log(value)
-    this.characterArray = this.roster.filter(char => {
+    // this.characterArray = this.roster.filter(char => {
      
-     return _.startsWith(char.name, value)
-    })
-    console.log( 'yu gondie', this.characterArray)
+    //  return _.startsWith(char.name, value)
+    // })
+    // console.log( 'yu gondie', this.characterArray)
     this.characterListTyping.emit(e)
     // if (!value || value.indexOf('@') >= 0) {
     //   this.options = [];

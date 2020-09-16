@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Apollo } from 'apollo-angular'
 import { Observable } from 'rxjs'
 import { Fighter, FighterService } from './services/fighter.service'
@@ -10,6 +10,7 @@ import { Fighter, FighterService } from './services/fighter.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  @Output() searchStringUpdating = new EventEmitter<Event>()
   title = 'showYourMoves';
   parentData:any;
   fighters:Observable<Fighter[]>
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
   loading:Boolean = true
   error:any
   event:Event
+  searchString:any
   constructor(
       private apollo: Apollo,
       private fighterService: FighterService
@@ -36,6 +38,9 @@ export class AppComponent implements OnInit {
 
   theNextPart(event:Event) {
     this.event = event
-    console.log('glee is a feeling you get', this.event)
+    this.searchString = (this.event.target as HTMLInputElement).value
+    console.log('glee is a feeling you get', this.searchString)
+    this.searchStringUpdating.emit(this.searchString)
+    
   }
 }

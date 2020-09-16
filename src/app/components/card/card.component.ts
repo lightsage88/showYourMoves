@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.description = this.fighter.description
-    console.log('this is your fighter', this.fighter)
+    // console.log('this is your fighter', this.fighter)
     this.fighterGames = this.fighter.franchise.games
   }
 
