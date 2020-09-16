@@ -21,44 +21,7 @@ export class CollapseComponent implements OnInit {
         name: 'DESCRIPTION',
         disabled: false,
         info: this.description
-      },
-      {
-        active: false,
-        disabled: false,
-        name: 'GAMES',
-        info: 'stuff'
-      },
-      {
-        active: false,
-        disabled: true,
-        name: 'OTHER STUFF',
-        info: "asdfsdf"
       }
-
     ]
-    
   }
-
-
-
-
-
-  panels = [
-    {
-      active: true,
-      name: 'DESCRIPTION',
-      disabled: false,
-    },
-    {
-      active: false,
-      disabled: false,
-      name: 'GAMES'
-    },
-    {
-      active: false,
-      disabled: true,
-      name: 'OTHER STUFF'
-    }
-  ];
-
 }

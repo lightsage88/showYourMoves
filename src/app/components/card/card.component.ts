@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { NgModule } from '@angular/core'
-
+import { Fighter } from '../../models/fighter'
 
 @Component({
   selector: 'app-card',
@@ -8,12 +8,15 @@ import { NgModule } from '@angular/core'
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() fighter:any
+  @Input() fighter:Fighter
   description:string
+  fighterGames:any[]
   constructor() { }
 
   ngOnInit(): void {
     this.description = this.fighter.description
+    console.log('this is your fighter', this.fighter)
+    this.fighterGames = this.fighter.franchise.games
   }
 
 }

@@ -4,11 +4,8 @@
     Home
   </li> 
 </ul>
-<!-- <div class="example-input">
-  <input placeholder="input here" nz-input [(ngModel)]="inputValue" [nzAutocomplete]="auto" />
-  <nz-autocomplete #auto [compareWith]="compareFun">
-    <nz-auto-option *ngFor="let option of options" [nzValue]="option" [nzLabel]="option.label">
-      {{ option.label }}
-    </nz-auto-option>
-  </nz-autocomplete>
-</div> -->
+
+<input placeholder="input here" nz-input [(ngModel)]="inputValue" (input)="onInput($event)" [nzAutocomplete]="auto" />
+<nz-autocomplete #auto>
+  <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{ option }}</nz-auto-option>
+</nz-autocomplete>

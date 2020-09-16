@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header.component'
     CommonModule,
     NzAutocompleteModule,
     NzInputModule,
+    FormsModule,
     NzMenuModule,
     NzIconModule
   ]
