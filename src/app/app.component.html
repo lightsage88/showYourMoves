@@ -1,4 +1,7 @@
 <router-outlet>
-  <app-header></app-header>
-  <app-board></app-board>
+  <app-header [roster]="fighters" (characterListTyping)="theNextPart($event)"></app-header>
+  <app-board 
+    [fighters]="fighters" 
+    [loading]="loading">
+  </app-board>
 </router-outlet>
