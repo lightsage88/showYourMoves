@@ -17,6 +17,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -30,6 +31,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CarouselCollapseComponent } from './components/carousel-collapse/carousel-collapse.component';
 import { GameCarouselComponent } from './components/game-carousel/game-carousel.component';
 import { GameCarouselModule } from './components/game-carousel/game-carousel.module';
+import { InfoPaneComponent } from './components/info-pane/info-pane.component';
 
 registerLocaleData(en);
 
@@ -41,7 +43,8 @@ registerLocaleData(en);
     CollapseComponent,
     HeaderComponent,
     CarouselCollapseComponent,
-    GameCarouselComponent
+    GameCarouselComponent,
+    InfoPaneComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ registerLocaleData(en);
     NzCarouselModule,
     NzDividerModule,
     NzCardModule,
+    NzTableModule,
     NzInputModule,
     NzMenuModule,
     NzIconModule,

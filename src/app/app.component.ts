@@ -38,7 +38,8 @@ export class AppComponent implements OnInit {
 
   theNextPart(event:Event) {
     this.event = event
-    this.searchString = (this.event.target as HTMLInputElement).value
+    console.log(this.event)
+    this.searchString = (this.event.target as HTMLInputElement).textContent
     console.log('glee is a feeling you get', this.searchString)
     this.searchStringUpdating.emit(this.searchString)
     

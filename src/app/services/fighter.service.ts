@@ -36,14 +36,14 @@ export class FighterService extends Query<Response> {
             franchise {
               id
               name
+              fighters {
+                id
+                name                
+              }
               games {
                 id
                 name
                 releaseYear
-              }
-              company {
-                description
-                foundingYear
               }
             }
           }

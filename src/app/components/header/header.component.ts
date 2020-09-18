@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SearchbarService } from '../../services/searchbar.service'
+import { Subscription } from 'rxjs'
 import * as _ from 'lodash'
 
 @Component({
@@ -13,13 +15,21 @@ export class HeaderComponent implements OnInit {
   inputValue?:string
   options:string[]
   _:any
+  private searchbarSub: Subscription
+  @Input()
+  text?:string
 
-  constructor() { }
+  constructor(private searchbar: SearchbarService) { }
 
   ngOnInit(): void {
     console.log(this.inputValue)
     console.log(this.roster)
-
+    this.searchbarSub = this.searchbar.ClickedName.subscribe(e => {
+      // console.log('mystery stories wine', e)
+      // this.text = (e.target as HTMLInputElement).textContent
+      // console.log(this.text)
+      this.characterListTyping.emit(e)
+    })
   }
 
   onInput(e: Event): void {

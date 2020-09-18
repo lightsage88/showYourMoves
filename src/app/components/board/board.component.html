@@ -8,10 +8,8 @@
   <!-- <nz-divider nzOrientation="left" nzText="Responsive"></nz-divider> -->
   <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
     <div nz-col class="gutter-row" [nzSpan]="6">
-      <div class="inner-box">col-6</div>
     </div>
   </div>
-
     <div col *ngFor="let fighter of fightersPresented || fighters">
       <app-card [fighter]="fighter"></app-card>
     </div>

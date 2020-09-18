@@ -5,11 +5,12 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { CardComponent } from './card.component'
 import { CollapseComponent } from '../collapse/collapse.component'
 import { GameCarouselComponent } from '../game-carousel/game-carousel.component'
+import { InfoPaneComponent } from '../info-pane/info-pane.component'
 
 
 
 @NgModule({
-  declarations: [CardComponent, CollapseComponent, GameCarouselComponent],
+  declarations: [CardComponent, CollapseComponent, GameCarouselComponent, InfoPaneComponent],
   imports: [
     CommonModule,
     NzCardModule,
