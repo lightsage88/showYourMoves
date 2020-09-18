@@ -20,6 +20,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { HeaderComponent } from './components/header/header.component';
@@ -51,6 +52,7 @@ registerLocaleData(en);
     NzGridModule,
     NzCollapseModule,
     NzCarouselModule,
+    NzDividerModule,
     NzCardModule,
     NzInputModule,
     NzMenuModule,

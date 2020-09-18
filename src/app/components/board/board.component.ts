@@ -29,7 +29,6 @@ export class BoardComponent implements OnInit
 
   constructor() { }
   ngOnInit(): void {
-    console.log(this.fighters, this.fightersPresented, this._name)
     
   }
 

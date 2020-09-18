@@ -3,4 +3,5 @@ export class Fighter {
   name:string;
   description: string;
   franchise: any;
+  image: string;
 }

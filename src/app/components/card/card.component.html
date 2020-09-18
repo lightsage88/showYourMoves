@@ -1,4 +1,5 @@
 <nz-card nzTitle={{fighter.name}} nzExtra={{fighter.franchise.name}}>
-  <app-collapse [fighter]="fighter"></app-collapse>
+  <img src={{fighter.image}} alt={{fighter.name}} />
   <app-game-carousel [gameCollection]="fighterGames"></app-game-carousel>
+  <app-collapse [fighter]="fighter"></app-collapse>
 </nz-card>

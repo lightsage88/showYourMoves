@@ -32,6 +32,7 @@ export class FighterService extends Query<Response> {
             id
             name
             description
+            image
             franchise {
               id
               name
@@ -39,6 +40,10 @@ export class FighterService extends Query<Response> {
                 id
                 name
                 releaseYear
+              }
+              company {
+                description
+                foundingYear
               }
             }
           }
