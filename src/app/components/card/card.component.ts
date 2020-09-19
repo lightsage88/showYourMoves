@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgModule } from '@angular/core'
 import { Fighter } from '../../models/fighter'
 
@@ -9,6 +9,7 @@ import { Fighter } from '../../models/fighter'
 })
 export class CardComponent implements OnInit {
   @Input() fighter:Fighter
+  @Output() modalBoolean = new EventEmitter<Event>()
   description:string
   fighterGames:any[]
   constructor() { }
@@ -17,6 +18,10 @@ export class CardComponent implements OnInit {
     this.description = this.fighter.description
     // console.log('this is your fighter', this.fighter)
     this.fighterGames = this.fighter.franchise.games
+  }
+
+  toggleModalDisplay(e: Event):void {
+    this.modalBoolean.emit(e)
   }
 
 }

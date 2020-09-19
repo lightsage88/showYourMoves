@@ -11,5 +11,5 @@
     </div>
   </div>
     <div col *ngFor="let fighter of fightersPresented || fighters">
-      <app-card [fighter]="fighter"></app-card>
+      <app-card [fighter]="fighter" (modalBoolean)="handleCardModalEvent($event)"></app-card>
     </div>

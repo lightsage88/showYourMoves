@@ -1,5 +1,9 @@
-<nz-card nzTitle={{fighter.name}} nzExtra={{fighter.franchise.name}}>
+<nz-card nzTitle={{fighter.name}} [nzExtra]="extraTemplate">
   <app-info-pane [fighter]="fighter"></app-info-pane>
   <app-game-carousel [gameCollection]="fighterGames"></app-game-carousel>
   <app-collapse [fighter]="fighter"></app-collapse>
 </nz-card>
+<ng-template #extraTemplate>
+  <button class="franchiseButton" (click)="toggleModalDisplay($event)"  attr.data-franchise-id={{fighter.franchise.id}}>{{fighter.franchise.name}}</button> /
+  <button class="companyButton" (click)="toggleModalDisplay($event)"  attr.data-company-id={{fighter.franchise.company.id}}>{{fighter.franchise.company.name}}</button>
+</ng-template>

@@ -1,11 +1,18 @@
-<ul nz-menu nzMode="horizontal">
+<!-- <ul nz-menu nzMode="horizontal">
   <li nz-menu-item nzSelected>
     <i nz-icon nzType="appstore"></i>
     Home
   </li> 
-</ul>
+</ul> -->
+<nz-page-header class="site-page-header" nzTitle="Show Your Moves!">
+  <nz-page-header-content>
+    <input placeholder="SEEK YOUR CHARACTER!" nz-input [(ngModel)]="inputValue || text" (input)="onInput($event)" [nzAutocomplete]="auto" />
+    <nz-autocomplete #auto>
+      <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{ option }}</nz-auto-option>
+    </nz-autocomplete>
+  </nz-page-header-content>
+  <nz-page-header-extra>
+    <button nz-button nzType="primary" (click)="toggleModalDisplay($event)">About</button>
+  </nz-page-header-extra>
+</nz-page-header>
 
-<input placeholder="input here" nz-input [(ngModel)]="inputValue || text" (input)="onInput($event)" [nzAutocomplete]="auto" />
-<nz-autocomplete #auto>
-  <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{ option }}</nz-auto-option>
-</nz-autocomplete>

@@ -4,4 +4,5 @@ export class Fighter {
   description: string;
   franchise: any;
   image: string;
+  company: any;
 }

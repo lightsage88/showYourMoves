@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header.component'
   imports: [
     CommonModule,
     NzAutocompleteModule,
+    NzPageHeaderModule,
     NzInputModule,
     FormsModule,
     NzMenuModule,

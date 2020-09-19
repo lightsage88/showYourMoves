@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ModalService } from '../../services/modal.service'
 import { SearchbarService } from '../../services/searchbar.service'
 import { Subscription } from 'rxjs'
 import * as _ from 'lodash'
@@ -11,23 +12,23 @@ import * as _ from 'lodash'
 export class HeaderComponent implements OnInit {
   @Input() roster: any
   @Output() characterListTyping = new EventEmitter<Event>()
+  @Output() modalBoolean = new EventEmitter<Event>()
   characterArray:any[]
   inputValue?:string
   options:string[]
+  modalDisplay:boolean = false
   _:any
   private searchbarSub: Subscription
+  private modalDisplaySub: Subscription
   @Input()
   text?:string
 
-  constructor(private searchbar: SearchbarService) { }
+  constructor(private searchbar: SearchbarService, private modal: ModalService) { }
 
   ngOnInit(): void {
     console.log(this.inputValue)
     console.log(this.roster)
     this.searchbarSub = this.searchbar.ClickedName.subscribe(e => {
-      // console.log('mystery stories wine', e)
-      // this.text = (e.target as HTMLInputElement).textContent
-      // console.log(this.text)
       this.characterListTyping.emit(e)
     })
   }
@@ -46,6 +47,10 @@ export class HeaderComponent implements OnInit {
     // } else {
     //   this.options = ['gmail.com', '163.com', 'qq.com'].map(domain => `${value}@${domain}`);
     // }
+  }
+
+  toggleModalDisplay(e: Event):void {
+    this.modalBoolean.emit(e)
   }
 
 }

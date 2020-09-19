@@ -8,8 +8,9 @@ export interface Fighter {
   name:string;
   description: string;
   franchise: any;
+  company: any;
 }
-
+ 
 export interface Response {
   fighters:Fighter[]
   roster: any
@@ -44,6 +45,10 @@ export class FighterService extends Query<Response> {
                 id
                 name
                 releaseYear
+              }
+              company {
+                id
+                name
               }
             }
           }

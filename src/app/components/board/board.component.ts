@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges,  } from '@angular/core';
+import { ModalService } from '../../services/modal.service'
 import { Fighter } from '../../services/fighter.service'
 import * as _ from 'lodash'
 
@@ -17,7 +18,7 @@ export class BoardComponent implements OnInit
   set searchString(_searchString: string) {
     console.log('setting name', _searchString)
     this._searchString = (_searchString && _searchString.trim()) || undefined
-    this.compareSearchStringToFighters()
+    this.compareSearchStringToFighters() 
   }
   private _searchString
   result:any
@@ -27,7 +28,7 @@ export class BoardComponent implements OnInit
 
 
 
-  constructor() { }
+  constructor(private modal: ModalService) { }
   ngOnInit(): void {
     
   }
@@ -52,5 +53,22 @@ export class BoardComponent implements OnInit
      })
      console.log( 'yu gondie', this.searchString, this.fightersPresented)
     }
+  }
+
+  handleCardModalEvent(e:Event) {
+    console.log('handlecardmodalevent running...', e)
+    // let infoType = (e.target as HTMLInputElement).className
+    // if(infoType.includes('franchiseButton')) {
+    //   console.log('you clicked a franchiseButton')
+    //   let franchiseId = (e.target as HTMLInputElement).attributes["data-franchise-id"].value
+    // console.log(franchiseId)
+    //   this.modal.handleFranchiseToggle(e, franchiseId)
+    // } else {
+    //   let companyId = (e.target as HTMLInputElement).attributes["data-company-id"].value
+    //   this.modal.handleCompanyToggle(e, companyId)
+    // }
+    this.modal.handleToggle(e)
+     
+
   }
 }
