@@ -1,9 +1,10 @@
 <router-outlet>
   <app-header [roster]="fighters" (characterListTyping)="theNextPart($event)" (modalBoolean)="toggleModalStatus($event)"></app-header>
-  <app-modal [modalLabel]="modalLabel" [modalOpen]="modalPresenting"></app-modal>
+  <app-modal [modalInfo]="companyDataInfo || franchiseDataInfo || ''" [modalLabel]="modalLabel" [modalOpen]="modalPresenting"></app-modal>
   <app-board 
     [searchString]="searchString"
     [fighters]="fighters" 
     [loading]="loading">
   </app-board>
 </router-outlet>
+<!-- //todo: the close modal button in moda.compment.html needs to hook into the app-header toggleModalStatus($evvent) method -->

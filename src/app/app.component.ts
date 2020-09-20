@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
 import { Fighter, FighterService } from './services/fighter.service'
 import { ModalService } from './services/modal.service'
 import { CompanyModalService } from './services/company-modal.service'
@@ -12,7 +12,7 @@ import { FranchiseModalInfo, FranchiseModalService } from './services/franchise-
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
   @Output() searchStringUpdating = new EventEmitter<Event>()
   franchiseInfo:Observable<FranchiseModalInfo>
   title = 'showYourMoves';
@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
   event:Event
   modalEvent:Event
   searchString:any
+  companyDataCandy:Subscription
+  companyDataInfo:any
+  franchiseDataCandy:Subscription
+  franchiseDataInfo:any
   constructor(
       private apollo: Apollo,
       private fighterService: FighterService,
@@ -51,11 +55,13 @@ export class AppComponent implements OnInit {
       this.toggleModalStatus(e)
     })
 
-    // this.franchisemodal.getFranchiseInfo.subscribe(e => {
-    //   console.log(e)
-    // })
-    
+    this.companyDataCandy = this.companymodal.dataCandy$.subscribe(candy => this.companyDataInfo = candy.oneCompany )
+    this.franchiseDataCandy = this.franchisemodal.franchiseCandy$.subscribe(candy => this.franchiseDataInfo = candy.oneFranchise)
+    console.log('ngoninit stuff', this.companyDataCandy, this.franchiseDataCandy)
+  }
 
+  ngOnChanges(): void {
+    console.log('CHANGES DETECTED', this.companyDataInfo, this.franchiseDataInfo)
   }
 
   theNextPart(event:Event) {
@@ -68,6 +74,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleModalStatus(event:Event) {
+    console.log('toggleModalStatus running from app', this.companyDataInfo, this.franchiseDataInfo)
     this.modalEvent = event
     let infoType = (event.target as HTMLInputElement).className 
 
@@ -79,19 +86,14 @@ export class AppComponent implements OnInit {
       this.modalLabel = (event.target as HTMLInputElement).textContent
     } else {
       if(infoType.includes('franchiseButton')) {
-        console.log('you clicked a franchiseButton')
         let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
-      console.log(franchiseId)
         //make an api call that feeds in the franchiseId for the appropriate data
-      let eels
-        eels = this.franchisemodal.getFranchiseInfo(franchiseId)
-        console.log("sorroritit"  ,eels)
+        this.franchisemodal.getFranchiseInfo(franchiseId)
+        // this.franchisemodal.getFranchiseInfo(franchiseId).subscribe()
       } else {
         let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
-      console.log(companyId)
-      let pigs
-        pigs = this.companymodal.getCompanyInfo(companyId)
-        console.log('piggy poop oo', pigs)
+          this.companymodal.getCompanyInfo(companyId)
+        console.log(this.companyDataInfo)
         //make an api call that feeds in the companyID for the apporpriate data
       }
     }

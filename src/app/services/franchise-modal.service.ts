@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs'
 import { Apollo } from 'apollo-angular'
 import gql from 'graphql-tag'
 
@@ -24,14 +25,11 @@ const franchiseQuery = gql`query oneFranchise($id: ID!) {
   providedIn: 'root'
 })
 export class FranchiseModalService {
-  // public franchiseInfo = new EventEmitter<FranchiseModalInfo>()
-  @Output() franchiseInfo = new EventEmitter<FranchiseModalInfo>()
-
   constructor(private apollo: Apollo) { }
   loading: boolean
   franchiseData: any
-
-
+  private _franchiseCandy = new BehaviorSubject<any>(0)
+  franchiseCandy$ = this._franchiseCandy.asObservable()
   getFranchiseInfo(id:any) {
     console.log('really triyn ghere')
      this.apollo.query({
@@ -44,7 +42,7 @@ export class FranchiseModalService {
       console.log('some data', data)
       this.loading = loading
       this.franchiseData = data
+      this._franchiseCandy.next(data)
     })
-    this.franchiseInfo.emit(this.franchiseData)
   }
 }
