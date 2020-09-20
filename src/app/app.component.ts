@@ -73,34 +73,44 @@ export class AppComponent implements OnInit, OnChanges {
     
   }
 
-  toggleModalStatus(event:Event) {
-    console.log('toggleModalStatus running from app', this.companyDataInfo, this.franchiseDataInfo)
-    this.modalEvent = event
+  prepareModalData(event: Event): void {
     let infoType = (event.target as HTMLInputElement).className 
-
-    console.log('toggleModalStatus running...', this.modalEvent)
-    this.modalPresenting = !this.modalPresenting
-
-    //if it's the about one then set this.modalLabel to it
-    if((event.target as HTMLInputElement).textContent === "About") {
-      this.modalLabel = (event.target as HTMLInputElement).textContent
+    if(infoType.includes('franchiseButton')) {
+      let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
+      this.franchisemodal.getFranchiseInfo(franchiseId)
     } else {
-      if(infoType.includes('franchiseButton')) {
-        let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
-        //make an api call that feeds in the franchiseId for the appropriate data
-        this.franchisemodal.getFranchiseInfo(franchiseId)
-        // this.franchisemodal.getFranchiseInfo(franchiseId).subscribe()
-      } else {
-        let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
-          this.companymodal.getCompanyInfo(companyId)
-        console.log(this.companyDataInfo)
-        //make an api call that feeds in the companyID for the apporpriate data
-      }
+      let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
+      this.companymodal.getCompanyInfo(companyId)
+    }
+  }
+
+
+  toggleModalStatus(event:Event) {
+    this.modalEvent = event
+    console.log('toggleModalStatus event running is', event, this.modalEvent)
+    // let infoType = (event.target as HTMLInputElement).className
+    this.companyDataInfo, this.franchiseDataInfo = null
+    if((this.modalEvent.target as HTMLInputElement).className !== "aboutModalButton") {
+      this.prepareModalData(event)
+    } else {
+      this.modalLabel = (event.target as HTMLInputElement).textContent
     }
 
+    this.modalPresenting = !this.modalPresenting
 
-    
-
-    // this.modalLabel = (event.target as HTMLInputElement).textContent
+    // if((event.target as HTMLInputElement).textContent === "About") {
+    //   this.modalLabel = (event.target as HTMLInputElement).textContent
+    // } else if(infoType) {
+    //   console.log('spin move')
+    //   if(infoType.includes('franchiseButton')) {
+    //     let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
+    //     this.franchisemodal.getFranchiseInfo(franchiseId)
+    //   } else {
+    //     let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
+    //     this.companymodal.getCompanyInfo(companyId)
+    //   }
+    // } else {
+    //   console.log('I bargebe cause I care')
+    // }
   }
 }

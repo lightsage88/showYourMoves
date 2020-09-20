@@ -1,6 +1,6 @@
 <router-outlet>
   <app-header [roster]="fighters" (characterListTyping)="theNextPart($event)" (modalBoolean)="toggleModalStatus($event)"></app-header>
-  <app-modal [modalInfo]="companyDataInfo || franchiseDataInfo || ''" [modalLabel]="modalLabel" [modalOpen]="modalPresenting"></app-modal>
+  <app-modal (modalBoolean)="toggleModalStatus($event)" [modalFranchiseInfo]="franchiseDataInfo"  [modalCompanyInfo]="companyDataInfo" [modalLabel]="modalLabel" [modalOpen]="modalPresenting"></app-modal>
   <app-board 
     [searchString]="searchString"
     [fighters]="fighters" 

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-
 @Component({
   selector: 'app-collapse',
   templateUrl: './collapse.component.html',
@@ -13,7 +12,6 @@ export class CollapseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('yabba', this.fighter)
     this.description = this.fighter.description
     this.fighterObjectArray = [
       {
