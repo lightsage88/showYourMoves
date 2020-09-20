@@ -1,5 +1,9 @@
 
 <h1>Modal is {{modalLabel}}</h1>
 <p *ngIf="modalOpen">modal works!</p>
-<h1>{{ this.modalInfo.name || '' }}</h1>
+<h1>{{ '' }}</h1>
 <button *ngIf="modalOpen" (click)="closeModal()">CLOSE MODAL</button> 
+
+<nz-modal [(nzVisible)]="modalOpen" nzTitle="Bochos" (nzOnCancel)="handleCancel($e)">
+  <p>pigeons</p>
+</nz-modal>

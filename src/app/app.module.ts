@@ -23,6 +23,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule } from 'ng-zorro-antd/modal'
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { HeaderComponent } from './components/header/header.component';
@@ -34,6 +35,7 @@ import { GameCarouselComponent } from './components/game-carousel/game-carousel.
 import { GameCarouselModule } from './components/game-carousel/game-carousel.module';
 import { InfoPaneComponent } from './components/info-pane/info-pane.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ModalModule } from './components/modal/modal.module';
 
 registerLocaleData(en);
 
@@ -58,6 +60,7 @@ registerLocaleData(en);
     NzGridModule,
     NzCollapseModule,
     NzCarouselModule,
+    NzModalModule,
     NzDividerModule,
     NzCardModule,
     NzPageHeaderModule,
@@ -69,7 +72,8 @@ registerLocaleData(en);
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
-    GameCarouselModule
+    GameCarouselModule,
+    ModalModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

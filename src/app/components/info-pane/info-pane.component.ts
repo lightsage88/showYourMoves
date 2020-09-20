@@ -38,25 +38,17 @@ export class InfoPaneComponent implements OnInit {
       sortOrder: null,
       sortFn: (a: DataItem, b: DataItem) => a.name.localeCompare(b.name),
       filterMultiple: true,
-      // listOfFilter: [
-      //   { text: 'Joe', value: 'Joe' },
-      //   { text: 'Jim', value: 'Jim', byDefault: true }
-      // ],
       filterFn: (list: string[], item: DataItem) => list.some(name => item.name.indexOf(name) !== -1)
     },
   ]
   constructor(private searchbar: SearchbarService) { }
 
   ngOnInit(): void {
-    console.log('info-pane ngonInit', this.fighter)
     this.parseSeriesCharacters()
-    console.log(this.relatedCharactersData)
   }
 
   parseSeriesCharacters():void {
-    console.log('parseFunction', this.fighter.franchise)
     this.fighter.franchise.fighters.forEach(el => {
-      
       if(el.id !== this.fighter.id) {
         this.relatedCharactersData.push({
           name: el.name
@@ -66,13 +58,8 @@ export class InfoPaneComponent implements OnInit {
   }
 
   seekName(e: Event):void {
-    console.log('seekName running')
     const value = (e.target as HTMLInputElement).textContent;
-    console.log(value)
     this.fighterNameToSeek.emit(e)
     this.searchbar.handleClickValue(e)
   }
-
-
-
 }
