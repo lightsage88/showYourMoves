@@ -75,12 +75,18 @@ export class AppComponent implements OnInit, OnChanges {
 
   prepareModalData(event: Event): void {
     let infoType = (event.target as HTMLInputElement).className 
-    if(infoType.includes('franchiseButton')) {
-      let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
-      this.franchisemodal.getFranchiseInfo(franchiseId)
+    if(infoType.includes('closeModalButton')) {
+      console.log('forma  line to the throne')
+      this.companyDataInfo, this.franchiseDataInfo = null
     } else {
-      let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
-      this.companymodal.getCompanyInfo(companyId)
+    
+          if(infoType.includes('franchiseButton')) {
+            let franchiseId = (event.target as HTMLInputElement).attributes["data-franchise-id"].value
+            this.franchisemodal.getFranchiseInfo(franchiseId)
+          } else {
+            let companyId = (event.target as HTMLInputElement).attributes["data-company-id"].value
+            this.companymodal.getCompanyInfo(companyId)
+          }
     }
   }
 

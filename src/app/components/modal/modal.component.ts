@@ -32,9 +32,10 @@ export class ModalComponent implements OnInit, OnChanges {
   }
 
   handleCancel(e: Event):void {
-    console.log('handleCancel was clicked')
+    console.log('handleCancel was clicked', e)
     this.modalBoolean.emit(e)
   }
+ 
 
   modalSwitchOver():void {
     
