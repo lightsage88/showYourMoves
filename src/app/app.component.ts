@@ -66,11 +66,8 @@ export class AppComponent implements OnInit, OnChanges {
 
   theNextPart(event:Event) {
     this.event = event
-    console.log(this.event)
     this.searchString = (this.event.target as HTMLInputElement).value
-    console.log('glee is a feeling you get', this.searchString)
     this.searchStringUpdating.emit(this.searchString)
-    
   }
 
   prepareModalData(event: Event): void {

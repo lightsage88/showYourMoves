@@ -1,9 +1,4 @@
-  
-<!-- <h1>Modal is {{modalLabel}}</h1> -->
-<p *ngIf="modalOpen">modal works!</p>
-<h1>{{ '' }}</h1>
-
-<nz-modal [(nzVisible)]="modalOpen">
+<nz-modal [(nzVisible)]="modalOpen" [nzFooter]='null' [nzClosable]="false">
   <button class="closeModalButton" *ngIf="modalOpen" (click)="handleCancel($event)">X</button> 
   <h2>{{modalLabel}}</h2>
   <p>{{modalDescription}}</p>

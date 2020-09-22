@@ -21,12 +21,6 @@ export interface Response {
   providedIn: 'root'
 })
 export class FighterService extends Query<Response> {
-  // result:any
-  // fighters:Fighter[]
-  // documents:Fighter[]
-  // constructor(private apollo: Apollo) { }
-
-    
     document = gql`
         {
           roster {

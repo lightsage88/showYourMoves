@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal'
 import { WikipediaService } from '../../services/wikipedia.service'
 
 @Component({
