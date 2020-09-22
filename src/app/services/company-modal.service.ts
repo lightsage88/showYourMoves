@@ -8,6 +8,7 @@ const companyQuery = gql`query oneCompany($id: ID!) {
     id
     name
     foundingYear
+    wikiID
     description
     franchises {
       name
@@ -46,47 +47,3 @@ export class CompanyModalService {
     })
   }
 }
-
-//
-    // import { Injectable } from '@angular/core';
-    // import { Apollo, Query } from 'apollo-angular'
-    // import gql from 'graphql-tag'
-
-    // // export interface Fighter {
-    // //   id:number;
-    // //   name:string;
-    // //   description: string;
-    // //   franchise: any;
-    // //   company: any;
-    // // }
-    // export interface Company {
-
-    // }
-
-    // export interface Response  {
-    //   // fighters:Fighter[]
-    //   // roster: any
-    //   company: Company
-    // }
-
-    // @Injectable({
-    //   providedIn: 'root'
-    // })
-    // export class CompanyModalService extends Query<Response> {
-
-    //   document = gql`
-    //   {
-    //   oneCompany($id: 1) {
-    //     id
-    //     name
-    //     foundingYear
-    //     description
-    //     franchises {
-    //       name
-    //     }
-    //   }
-    // }
-    // `  
-    // }
-
-

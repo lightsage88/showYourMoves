@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges,  } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalService } from '../../services/modal.service'
 import { Fighter } from '../../services/fighter.service'
 import * as _ from 'lodash'
@@ -20,7 +20,7 @@ export class BoardComponent implements OnInit
     this._searchString = (_searchString && _searchString.trim()) || undefined
     this.compareSearchStringToFighters() 
   }
-  private _searchString
+  private _searchString:string
   result:any
   @Input() loading:Boolean = true
   error:any
@@ -70,5 +70,8 @@ export class BoardComponent implements OnInit
     this.modal.handleToggle(e)
      
 
+  }
+  handleEvent(event: Event):void {
+    console.log('boardhandline event', event)
   }
 }

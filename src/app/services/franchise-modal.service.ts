@@ -13,6 +13,7 @@ const franchiseQuery = gql`query oneFranchise($id: ID!) {
   oneFranchise(id: $id) {
     id
     name
+    wikiID
     games {
       name
     }

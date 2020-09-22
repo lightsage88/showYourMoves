@@ -67,7 +67,7 @@ export class AppComponent implements OnInit, OnChanges {
   theNextPart(event:Event) {
     this.event = event
     console.log(this.event)
-    this.searchString = (this.event.target as HTMLInputElement).textContent
+    this.searchString = (this.event.target as HTMLInputElement).value
     console.log('glee is a feeling you get', this.searchString)
     this.searchStringUpdating.emit(this.searchString)
     
@@ -77,7 +77,8 @@ export class AppComponent implements OnInit, OnChanges {
     let infoType = (event.target as HTMLInputElement).className 
     if(infoType.includes('closeModalButton')) {
       console.log('forma  line to the throne')
-      this.companyDataInfo, this.franchiseDataInfo = null
+      this.companyDataInfo = null
+      this.franchiseDataInfo = null
     } else {
     
           if(infoType.includes('franchiseButton')) {
