@@ -7,7 +7,7 @@ import { environment } from '../environments/environment'
 let backendURL
 
 if(environment.production) {
-  backendURL = "https://thawing-depths-55365.herokuapp.com/"
+  backendURL = "https://thawing-depths-55365.herokuapp.com"
 } else {
   backendURL = "http://localhost:4000"
 }
