@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Fighter } from '../../models/Fighter'
+
 
 @Component({
   selector: 'app-collapse',
@@ -6,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./collapse.component.scss']
 })
 export class CollapseComponent implements OnInit {
-  @Input() fighter:any
-  description:string
+  @Input() fighter:Fighter
+  description:string = ''
   fighterObjectArray:any[]
   constructor() { }
 

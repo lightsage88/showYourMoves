@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselCollapseComponent } from './carousel-collapse.component';
+import { CarouselCollapseComponent } from '../app/components/carousel-collapse/carousel-collapse.component';
 
 describe('CarouselCollapseComponent', () => {
   let component: CarouselCollapseComponent;

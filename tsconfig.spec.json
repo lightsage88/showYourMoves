@@ -1,6 +1,9 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
+  "angularCompilerOptions": {
+    "enableIvy": false
+  },
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
@@ -9,7 +12,16 @@
   },
   "files": [
     "src/test.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/tests/about.component.spec.ts",
+    "src/tests/board.component.spec.ts",
+    "src/tests/card.component.spec.ts",
+    "src/tests/carousel-collapse.component.spec.ts",
+    "src/tests/collapse.component.spec.ts",
+    "src/tests/game-carousel.component.spec.ts",
+    "src/tests/header.component.spec.ts",
+    "src/tests/info-pane.component.spec.ts",
+    "src/tests/modal.component.spec.ts"
   ],
   "include": [
     "src/**/*.spec.ts",

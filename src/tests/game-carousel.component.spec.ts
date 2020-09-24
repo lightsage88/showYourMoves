@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 
-import { GameCarouselComponent } from './game-carousel.component';
+import { GameCarouselComponent } from '../app/components/game-carousel/game-carousel.component';
 
 describe('GameCarouselComponent', () => {
   let component: GameCarouselComponent;
@@ -8,6 +9,7 @@ describe('GameCarouselComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ NzCarouselModule ],
       declarations: [ GameCarouselComponent ]
     })
     .compileComponents();

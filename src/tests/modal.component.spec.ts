@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalComponent } from '../app/components/modal/modal.component'
+import { WikipediaService } from '../app/services/wikipedia.service'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 
-import { ModalComponent } from './modal.component';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
@@ -8,7 +11,9 @@ describe('ModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalComponent ]
+      imports: [ NzModalModule, HttpClientTestingModule ],
+      declarations: [ ModalComponent ],
+      providers: [ WikipediaService ]
     })
     .compileComponents();
   }));
