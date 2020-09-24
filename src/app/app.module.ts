@@ -29,7 +29,6 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { HeaderComponent } from './components/header/header.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CarouselCollapseComponent } from './components/carousel-collapse/carousel-collapse.component';
 import { GameCarouselComponent } from './components/game-carousel/game-carousel.component';
 import { GameCarouselModule } from './components/game-carousel/game-carousel.module';
@@ -59,7 +58,6 @@ registerLocaleData(en);
     NzAutocompleteModule,
     NzGridModule,
     NzCollapseModule,
-    NzCarouselModule,
     NzModalModule,
     NzDividerModule,
     NzCardModule,
