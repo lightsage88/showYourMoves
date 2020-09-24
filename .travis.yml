@@ -3,8 +3,8 @@ node_js:
 - '10'
 deploy:
   provider: heroku
-  app: lit-cliffs-40047 
   api_key:
     secure: Cj3QuozxDXDHlMr6Mds5U/TXk71zryMqFcOCkuwQ+duZs38R6Ur3tooGOqvkuxE+o4gR8h4OqVj9UiuY0/ZQcpUWkciHD5st0dXiwkRAodYL2/VHE+DxzJ7voIHo9D9G9gEN11IqgQYW0G4gLuLQmYB43ZTL5CeeqwKQmkpjgOxMD+mjiwPi3wBG/oQSxRyZJFpMCLpximeXqJcPWVoROQuR2eQR4wyp0edC11pPcFz+jLxmNt6QGvKiAfHGR2hSC39ceIVuLCaOcQxrgByJnnB91LWzH4XYU4Kkwo0YIRCf5A9peJXxND25vQMerqmmsahbMAspA2/5ZKMRMbuTMNXDyJhUFMBM9l5Jn5FbVKZS6T1+zk/tggA2wBL3IiaPKmAhBC62hxff38n6OqLhTKxL6DsHR1iLP8z2Tpz2sg8Q1CBHKRoUycYCazN01e4B41UdFGyCyPAKPFakZDxlc0zlOF2/5E3jFRdxxpnuDkcs4bd+T4OqjcUmYM20H4zAn2pLv+IxyqxV565HYT7TF7Pzbdb8TailtTjcUr7flYbTHd2/KWfPbrqsbfkmOgW0F8mkieIKSg8VMLLM0IP1EXsXUXa6P/Vp4Yw8QF/K8Dhd2XEn6OLwtzs5QNAnCzSjSzyPSzmjvXxkfDh974vcxFHoygRMueTWdbFxkSa1oUc=
+    app: lit-cliffs-40047 
   on:
     repo: lightsage88/showYourMoves
