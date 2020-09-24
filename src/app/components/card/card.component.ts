@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgModule } from '@angular/core'
-import { Fighter } from '../../models/fighter'
+import { Fighter } from '../../models/Fighter'
 
 @Component({
   selector: 'app-card',
