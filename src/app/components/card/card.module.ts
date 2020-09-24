@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CardComponent } from './card.component'
 import { CollapseComponent } from '../collapse/collapse.component'
 import { GameCarouselComponent } from '../game-carousel/game-carousel.component'
@@ -14,8 +15,8 @@ import { InfoPaneComponent } from '../info-pane/info-pane.component'
   imports: [
     CommonModule,
     NzCardModule,
-    NzCollapseModule
-  ],
-  // exports: [CardComponent]
+    NzCollapseModule,
+    NzCarouselModule
+  ]
 })
 export class CardModule { }

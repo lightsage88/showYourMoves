@@ -5,7 +5,7 @@ import { GameCarouselComponent } from '../game-carousel/game-carousel.component'
 
 
 @NgModule({
-  declarations: [GameCarouselComponent],
+  declarations: [ GameCarouselComponent ],
   imports: [
     CommonModule,
     NzCarouselModule
