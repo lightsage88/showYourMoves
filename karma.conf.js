@@ -31,7 +31,7 @@ module.exports = function (config) {
         base: 'Chrome',
         flags: ['--disable-web-security', '--disable-site-isolation-trials']
       }
-    }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
