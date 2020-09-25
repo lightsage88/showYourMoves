@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node app.js",
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -21,6 +21,7 @@
     "@angular/router": "^9.0.0",
     "@apollo/client": "^3.0.0",
     "apollo-angular": "^2.0.4",
+    "express": "^4.17.1",
     "graphql": "^15.0.0",
     "lodash": "^4.17.20",
     "ng-zorro-antd": "^9.3.0",
