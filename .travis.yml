@@ -3,8 +3,7 @@ node_js:
 - '10'
 deploy:
   provider: heroku
-  api_key:
-    secure: Kx/YWVkymUIFXdQ+AZJdwIAK8ezWwTpPbNal7WUGeDod6xZjUPDk9lmmSpi85ppfdKBgA3ftPdFebYVI2hU/ZcsdU9W7Vqnhcpu2tAwwQKMdoBhS2K2mGzXRI9wwlQe0BkWevVKwUsFTo74Ti/gLnncjNwryjS8NsmlSzkyjcX1dLNwPoDfhYJM3IIlWo0FvbVmuiXMyUWNlQ9MNVSziJWr25DjuRFJnyBfjZ4d3N0R4FHmGCgU2kaYYj/4kHzCUb6lmy8CCHYJ51dedk4+85tbNNeywa/qqpe+jYrAwGgkmdbiQil3PHzGtsRx5QhA68lyclkMHZaiKtubqcvf679eONHUbuUwKjONkT3MmZoTLCnOUSw+Y5qEsq8HY/r08E0EekcBhq21YU7d/QlQVHOV9GS0lvo4+oMTFCOQFdvp10m9qGKx7goQt1aAKjOK0fe6uKSx2bPLjjmQ+etpTvQhY1Nmf7yFM6n6EuVGd7D6Svw43K1JW4efKLL3ZqaNyl/847R+DCRwIrZHxiseGc9V/+NBDfyCIqOp9/ozDqJY9Jr7SaXvkiQyYWS6AXvOzCURVHc91p6nhprSYWkVo+2ftDg02wD2u6nF6Mdu6bWZuZNhEvsEANWJAPEx7D4evW0wi0MLhkGyWSMJV33bnY4Q1ysONwzN6m66/yJmGHdI=
+  api_key: 6366ebc3-e8fa-4650-8485-5e4a3b41a9cb
   app: stark-oasis-88064
   on:
     repo: lightsage88/showYourMoves
