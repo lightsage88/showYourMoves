@@ -6,6 +6,7 @@ import { environment } from '../environments/environment'
 
 const uri = environment.backendURL; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+  console.log(uri)
   return {
     link: httpLink.create({uri}),
     cache: new InMemoryCache(),
