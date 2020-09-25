@@ -2,8 +2,9 @@ language: node_js
 node_js: node
 deploy:
   provider: heroku
-  skip_cleanup: true
-  api_key: 6366ebc3-e8fa-4650-8485-5e4a3b41a9cb
+  api_key:
+    secure: wRqEQR8YsVtESb1T18+RXgO2sg/izSTWy2I+v8u0jxcOY/zSBCr3npuyabpK3rF4olSm+/EWVkBGRoaphJPTbgMrQn1+G3HhThCzF0SzUXmd1M03dZ8/HVfz8WVm2PI/8iObtkZyexK3/OzHSR+9kkCd3jLELkW9KEjtwVMw5GPbgQPOHRHGLF5dC7gkZITmE/igDdeB2MB/KdDn4UIQbKLFOPJkNEiq9ZA3o12GDe5L2E3qXXWZL5cDhvw39dVrJh/UAdq0+jf/rB/flZ3m0ToGeazxCO4WWdFi40VYNPukzH4rFSE0vBSKZCb2I1xvPJUTP2fPgJKRKcHDXfsdtgNxDl/IBEABfsNebByEllCgJhXAMP+uWn2ZkDIUdwMWZ28zY6UHAyVFla7gp93UbkP5P0I5E6lQmKg1X3QrPm/SQwa8OC1exh1yUjOkxVLNrTG0WeoCTuxliQdtS7QIjTalYMIaMrDey2Ivgnp8EKzH+pH04Y9SLdfw8+qy31kkd59VDc+nd1qIny/Tkxb96N3982ZcRnLv9nuVNPewah67cqAlk+nmR3/HNqUxSnAn4moclTVy25HofsMayxfpazY/EvhKN/GneR1tGZUyNvxcjMy5OrMJMy/Rru+ijVpkb2Q/xWXRMrol9ZwUUnVmbNzXr/lTTT5lLTBBubB0cMo=
   app: enigmatic-falls-02464
   on:
     repo: lightsage88/showYourMoves 
+  skip_cleanup: 'true'
